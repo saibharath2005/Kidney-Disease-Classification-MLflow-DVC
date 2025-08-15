@@ -21,7 +21,7 @@ class Training:
 
         datagenerator_kwargs = dict(
             rescale = 1./255,
-            validation_split=0.20
+            validation_split=0.2
         )
 
         dataflow_kwargs = dict(
@@ -64,6 +64,7 @@ class Training:
     
     @staticmethod
     def save_model(path: Path, model: tf.keras.Model):
+        os.makedirs(os.path.dirname(path), exist_ok=True) 
         model.save(path)
 
 
@@ -85,4 +86,4 @@ class Training:
             path=self.config.trained_model_path,
             model=self.model
         )
-
+        print(f"Trained model saved at {self.config.trained_model_path}")

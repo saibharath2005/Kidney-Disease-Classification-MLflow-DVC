@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Kidney Disease Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-title">
+            <img src="{{ url_for('static', filename='images/modern-tech-kidney-logo-concept-vector-29699161.jpg') }}" 
+                 alt="Kidney-Classification" class="logo">
+            <h1 class="site-title">Kidney Disease Classifier</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>About Kidney Disease Classifier</h1>
+
+        <!-- Kidney Disease Section -->
+        <section class="about-section">
+            <div class="about-text">
+                <h2>What is Kidney Disease?</h2>
+                <p>
+                    Kidney disease refers to conditions that impair the kidneys' ability to filter waste and excess fluids from the blood. 
+                    Chronic Kidney Disease (CKD) can lead to kidney failure if not detected early.
+                </p>
+                <p>
+                    Common causes include diabetes, high blood pressure, and genetic disorders. 
+                    Early detection is crucial to prevent progression to kidney failure.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/42979_2023_1912_Fig3_HTML.png') }}" 
+                     alt="Healthy vs Diseased Kidney">
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="about-section reverse">
+            <div class="about-text">
+                <h2>Technology Used: VGG16 CNN Model</h2>
+                <p>
+                    This project leverages the <strong>VGG16 Convolutional Neural Network (CNN)</strong> for kidney disease classification. 
+                    VGG16 is a 16-layer deep CNN, widely recognized for its strong feature extraction capabilities.
+                </p>
+                <p>
+                    We apply <strong>transfer learning</strong> on the pre-trained VGG16 model, fine-tuning it on kidney scan images 
+                    to accurately classify them as healthy or diseased. This allows high performance even with a limited dataset.
+                </p>
+                <p>
+                    The backend is implemented using <strong>Python</strong> and <strong>Flask</strong>, while 
+                    <strong>DVC (Data Version Control)</strong> manages datasets and ML pipelines to ensure reproducibility 
+                    and versioning of experiments.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/conv-layers-vgg16-1024x450.jpg') }}" 
+                     alt="VGG16 Architecture">
+            </div>
+        </section>
+
+        <!-- Healthcare Impact Section -->
+        <section class="about-section">
+            <div class="about-text">
+                <h2>Impact on Healthcare</h2>
+                <p>
+                    By utilizing the VGG16 CNN model, this system can predict kidney disease rapidly and accurately from scan images. 
+                    It supports doctors in early diagnosis, reducing errors and improving patient outcomes.
+                </p>
+                <p>
+                    AI-based kidney disease classification improves early detection, aids clinical decision-making, 
+                    and demonstrates the transformative potential of deep learning in healthcare.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/applsci-13-03621-g001-550.jpg') }}" 
+                     alt="AI in Healthcare">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Kidney Disease Classifier. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

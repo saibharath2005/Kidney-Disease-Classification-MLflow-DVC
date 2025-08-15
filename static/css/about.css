@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8fafc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #2c3e50, #34495e);
+    color: white;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .logo {
+    height: 55px;
+    border-radius: 5px;
+}
+
+header .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ecf0f1;
+}
+
+header nav a {
+    color: white;
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #1abc9c;
+}
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+/* About Sections */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+}
+
+.about-text h2 {
+    color: #2980b9;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-left: 5px solid #2980b9;
+    padding-left: 12px;
+}
+
+.about-text p, 
+.about-text ul {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #2c3e50, #1a252f);
+    color: white;
+    padding: 18px 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 40px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-title {
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+}

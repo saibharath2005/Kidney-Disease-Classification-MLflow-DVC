@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Kidney Disease</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/predict.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-title">
+            <img src="{{ url_for('static', filename='images/modern-tech-kidney-logo-concept-vector-29699161.jpg') }}" 
+                 alt="Kidney Classifier Logo" class="logo">
+            <h2 class="site-title">Kidney Disease Classifier</h2>
+        </div>
+        <nav>
+            <a href="/" >Home</a>
+            <a href="/predict" class="active">Predict</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Predict Kidney Disease</h1>
+
+        <div class="predict-container">
+            <form method="POST" enctype="multipart/form-data">
+                <label for="file-upload">Upload Kidney Scan Image:</label>
+                <input type="file" id="file-upload" name="file" required>
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="result-section">
+            <h2>Prediction Result:</h2>
+            {% if result.class %}
+                <p><strong>Class:</strong> {{ result.class }}</p>
+                <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
+            {% else %}
+                <p>{{ result }}</p>
+            {% endif %}
+            {% if uploaded_filename %}
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_filename) }}" 
+                     alt="Uploaded Image" class="uploaded-image">
+            {% endif %}
+        </div>
+        {% endif %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kidney Disease Classifier. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
